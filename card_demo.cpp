@@ -42,40 +42,50 @@ int main( )
         p2.bookCards(*check5, *check6);
     }
 
-    for(int i=0; i<3; i++)
+    while(1)
     {
-        Card c1 = p1.chooseCardFromHand();
-        Card::Card* check1 = new Card::Card();
-        Card::Card* check2 = new Card::Card();
-        cout << p1.getName() << " asking for " << c1.toString() << "\n";
-        if(p2.cardInHand(c1))
+        if(d.size() == 0)
         {
-            p1.addCard(p2.removeCardFromHand(c1));
+            cout << "Game over\n";
+            break;
         }
-        else
-        {
+        if(p1.getHandSize()>0) {
+            Card c1 = p1.chooseCardFromHand();
+            cout << p1.getName() << " asking for " << c1.toString() << "\n";
+            if (p2.cardInHand(c1)) {
+                p1.addCard(p2.removeCardFromHand(c1));
+            } else {
+                p1.addCard(d.dealCard());
+            }
+        } else {
+            cout << "No cards, so " << p1.getName() << " is drawing\n";
             p1.addCard(d.dealCard());
         }
-        while(p1.checkHandForBook(*check1, *check2))
+        if(d.size() == 0)
         {
-            p1.bookCards(*check1, *check2);
+            cout << "Game over\n";
+            break;
         }
-        Card c2 = p2.chooseCardFromHand();
-        cout << p2.getName() << " asking for " << c2.toString() << "\n";
-        if(p1.cardInHand(c2))
-        {
-            p2.addCard(p1.removeCardFromHand(c2));
+        if(p2.getHandSize()> 0) {
+            Card c2 = p2.chooseCardFromHand();
+            cout << p2.getName() << " asking for " << c2.toString() << "\n";
+            if(p1.cardInHand(c2))
+            {
+                p2.addCard(p1.removeCardFromHand(c2));
+            }
+            else
+            {
+                p2.addCard(d.dealCard());
+            }
         }
-        else
-        {
+        else {
+            cout << "No cards, so " << p2.getName() << " is drawing\n";
             p2.addCard(d.dealCard());
         }
-        while(p2.checkHandForBook(*check1, *check2))
-        {
-            p2.bookCards(*check1, *check2);
-        }
         cout << p1.getName() <<" has : \n" << p1.showHand() << endl;
+        cout << p1.getName() <<" has books : \n" << p1.showBooks() << endl;
         cout << p2.getName() <<" has : \n" << p2.showHand() << endl;
+        cout << p2.getName() <<" has books : \n" << p2.showBooks() << endl;
     }
     return EXIT_SUCCESS;
 }

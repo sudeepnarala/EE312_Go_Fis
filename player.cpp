@@ -14,6 +14,12 @@ Player::Player()
 void Player::addCard(Card c)
 {
     myHand.push_back(c);
+    Card::Card* card1 = new Card::Card();
+    Card::Card* card2 = new Card::Card();
+    while(this->checkHandForBook(*card1, *card2))
+    {
+        this->bookCards(*card1, *card2);
+    }
 }
 
 void Player::bookCards(Card c1, Card c2)
@@ -23,45 +29,18 @@ void Player::bookCards(Card c1, Card c2)
     myBook.push_back(c1);
     myBook.push_back(c2);
 }
+// Precondition: There is at least one card in the hand
 Card Player::chooseCardFromHand()
 {
-//    for(auto i=myHand.begin(); i!=myHand.end(); ++i)
-//    {
-//        bool flag = false;
-//        for(auto j=asked.begin(); j!=asked.end(); ++j)
-//        {
-//            if((*i)==(*j))
-//            {
-//                flag=true;
-//            }
-//        }
-//        if(flag)
-//        {
-//            continue;
-//        }
-//        else
-//        {
-//            asked.push_back(*i);
-//            return (*i);
-//        }
-//    }
-//    int len = this->getHandSize();
-//    for(auto j=asked.begin(); j!=asked.end(); ++j)
-//    {
-//        len--;
-//    }
-//    if(len==0)
-//        asked.empty();
-//    asked.push_back(*myHand.begin());
-//    return *myHand.begin();
-    srand((unsigned)time(0));
+    unsigned int currentTime =  (unsigned)time(0);
+    srand(currentTime);
     int index = rand()%myHand.size();
     return myHand.at(index);
 }
 
 bool Player::cardInHand(Card c) const
 {
-    for(auto i=myHand.begin(); i!=myHand.end(); ++i)
+    for(vector<Card>::const_iterator  i=myHand.begin(); i!=myHand.end(); ++i)
     {
         if(*i==c)
         {
@@ -73,7 +52,7 @@ bool Player::cardInHand(Card c) const
 
 Card Player::removeCardFromHand(Card c)
 {
-    for(auto i=myHand.begin(); i!=myHand.end(); ++i)
+    for(vector<Card>::const_iterator i=myHand.begin(); i!=myHand.end(); ++i)
     {
         if(*i==c)
         {
@@ -88,7 +67,7 @@ Card Player::removeCardFromHand(Card c)
 int Player::getHandSize() const
 {
     int c=0;
-    for(auto i=myHand.begin(); i!=myHand.end(); ++i)
+    for(vector<Card>::const_iterator i=myHand.begin(); i!=myHand.end(); ++i)
     {
         c++;
     }
@@ -98,7 +77,7 @@ int Player::getHandSize() const
 int Player::getBookSize() const
 {
     int c=0;
-    for(auto i=myBook.begin(); i!=myBook.end(); ++i)
+    for(vector<Card>::const_iterator i=myBook.begin(); i!=myBook.end(); ++i)
     {
         c++;
     }
@@ -108,7 +87,7 @@ int Player::getBookSize() const
 string Player::showHand() const
 {
     string str = "";
-    for(auto i=myHand.begin(); i!=myHand.end(); ++i)
+    for(vector<Card>::const_iterator i=myHand.begin(); i!=myHand.end(); ++i)
     {
         str+=(*i).toString();
         str+="\n";
@@ -119,7 +98,7 @@ string Player::showHand() const
 string Player::showBooks() const
 {
     string str = "";
-    for(auto i=myBook.begin(); i!=myBook.end(); ++i)
+    for(vector<Card>::const_iterator i=myBook.begin(); i!=myBook.end(); ++i)
     {
         str+=(*i).toString();
         str+="\n";
@@ -129,8 +108,8 @@ string Player::showBooks() const
 
 bool Player::checkHandForBook(Card &c1, Card &c2)
 {
-    for(auto i=myHand.begin(); i!=myHand.end(); ++i) {
-        for (auto j = i+1; j != myHand.end(); ++j) {
+    for(vector<Card>::const_iterator i=myHand.begin(); i!=myHand.end(); ++i) {
+        for (vector<Card>::const_iterator j = i+1; j != myHand.end(); ++j) {
             if ((*i) == (*j)) {
                 c1 = *(new Card::Card((*i).getRank(), (*i).getSuit()));
                 c2 = *(new Card::Card((*j).getRank(), (*j).getSuit()));

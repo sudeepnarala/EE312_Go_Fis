@@ -46,17 +46,12 @@ void Deck::shuffle()
     }
 }
 
+// Precondition: There are cards left in the deck
 Card Deck::dealCard()
 {
-    if(myIndex<(SIZE-1))
-    {
-        myIndex++;
-        return myCards[myIndex];
-    }
-    else
-    {
-        return *(new Card::Card());
-    }
+    myIndex++;
+    return myCards[myIndex];
+
 }
 
 int Deck::size() const
