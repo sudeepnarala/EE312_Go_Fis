@@ -1,0 +1,263 @@
+Joe asks - Do you have a 2
+Hannah saying - Yes. I have a 2
+Joe books 2
+
+Joe asks - Do you have a Q
+Hannah saying - Yes. I have a Q
+Joe books Q
+
+Joe asks - Do you have a 9
+Hannah says - Go fish
+Joe draws A
+
+Hannah asks - Do you have a 3
+Joe says - Yes. I have a 3
+Hannah books 3
+
+Hannah asks - Do you have a 10
+Joe say - Go fish
+Hannah draws 7
+
+Joe asks - Do you have a 8
+Hannah says - Go fish
+Joe draws Q
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws 9
+
+Joe asks - Do you have a 9
+Hannah saying - Yes. I have a 9
+Joe books 9
+
+Joe asks - Do you have a 6
+Hannah says - Go fish
+Joe draws Q
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws 4
+
+Joe asks - Do you have a 8
+Hannah says - Go fish
+Joe draws K
+
+Hannah asks - Do you have a 10
+Joe say - Go fish
+Hannah draws 8
+
+Joe asks - Do you have a 6
+Hannah says - Go fish
+Joe draws 3
+
+Hannah asks - Do you have a 10
+Joe say - Go fish
+Hannah draws 4
+
+Joe asks - Do you have a 8
+Hannah saying - Yes. I have a 8
+Joe books 8
+
+Joe asks - Do you have a K
+Hannah says - Go fish
+Joe draws K
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws 6
+
+Joe asks - Do you have a 6
+Hannah saying - Yes. I have a 6
+Joe books 6
+
+Joe asks - Do you have a 3
+Hannah says - Go fish
+Joe draws 4
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws 2
+
+Joe asks - Do you have a 3
+Hannah says - Go fish
+Joe draws 5
+
+Hannah asks - Do you have a 10
+Joe say - Go fish
+Hannah draws J
+
+Joe asks - Do you have a 4
+Hannah says - Go fish
+Joe draws 10
+
+Hannah asks - Do you have a 10
+Joe says - Yes. I have a 10
+Hannah books 10
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws 8
+
+Joe asks - Do you have a 4
+Hannah says - Go fish
+Joe draws 4
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws 9
+
+Joe asks - Do you have a 3
+Hannah says - Go fish
+Joe draws 3
+
+Hannah asks - Do you have a 8
+Joe say - Go fish
+Hannah draws 7
+
+Joe asks - Do you have a 5
+Hannah says - Go fish
+Joe draws 6
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws 10
+
+Joe asks - Do you have a 5
+Hannah says - Go fish
+Joe draws 5
+
+Hannah asks - Do you have a 9
+Joe say - Go fish
+Hannah draws 7
+
+Joe asks - Do you have a 6
+Hannah says - Go fish
+Joe draws 8
+
+Hannah asks - Do you have a 8
+Joe says - Yes. I have a 8
+Hannah books 8
+
+Hannah asks - Do you have a 10
+Joe say - Go fish
+Hannah draws 7
+
+Joe asks - Do you have a 6
+Hannah says - Go fish
+Joe draws 2
+
+Hannah asks - Do you have a A
+Joe say - Go fish
+Hannah draws J
+
+Joe asks - Do you have a 6
+Hannah says - Go fish
+Joe draws A
+
+Hannah asks - Do you have a A
+Joe says - Yes. I have a A
+Hannah books A
+
+Hannah asks - Do you have a 9
+Joe say - Go fish
+Hannah draws 6
+
+Joe asks - Do you have a 6
+Hannah saying - Yes. I have a 6
+Joe books 6
+
+Joe asks - Do you have a 2
+Hannah saying - Yes. I have a 2
+Joe books 2
+
+Joe draws J
+Hannah says - Go fish
+Joe draws 9
+
+Hannah asks - Do you have a 9
+Joe says - Yes. I have a 9
+Hannah books 9
+
+Hannah asks - Do you have a 10
+Joe say - Go fish
+Hannah draws 5
+
+Joe asks - Do you have a J
+Hannah says - Go fish
+Joe draws 5
+
+Hannah asks - Do you have a 10
+Joe say - Go fish
+Hannah draws J
+
+Joe asks - Do you have a J
+Hannah saying - Yes. I have a J
+Joe books J
+
+Joe asks - Do you have a 5
+Hannah saying - Yes. I have a 5
+Joe books 5
+
+Joe draws 10
+Hannah says - Go fish
+Hannah asks - Do you have a 10
+Joe says - Yes. I have a 10
+Hannah books 10
+
+Joe has books : 
+2d
+2c
+Qd
+Qs
+Ad
+Ac
+9h
+9d
+Qh
+Qc
+8s
+8d
+Kd
+Kh
+6c
+6s
+4d
+4s
+3s
+3d
+5d
+5h
+6d
+6h
+2h
+2s
+Jd
+Js
+5s
+5c
+
+Hannah has books : 
+Kc
+Ks
+3h
+3c
+4c
+4h
+10s
+10h
+7d
+7s
+8h
+8c
+7c
+7h
+Jc
+Jh
+As
+Ah
+9c
+9s
+10d
+10c
+
+Joe wins with 15 books!
