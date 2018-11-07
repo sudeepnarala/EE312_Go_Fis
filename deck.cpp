@@ -28,20 +28,22 @@ Deck::Deck()
                 s = Card::clubs;
             }
         }
-        myCards[i] = *(new Card(currRank, s));
+        Card* temp = new Card(currRank, s);
+        myCards[i] = *temp;
         currRank+=1;
+        delete(temp);
     }
-    myIndex = -1;
+    myIndex = Deck::SIZE;
 }
 
 void Deck::shuffle()
 {
     srand((unsigned)time(0));
-    for(int i=0; i<3*Deck::SIZE; i++)
+    for(int i=0; i<3*this->size(); i++)
     {
-        int swapIndex = rand()%Deck::SIZE;
-        Card temp = myCards[i%Deck::SIZE];
-        myCards[i%Deck::SIZE] = myCards[swapIndex];
+        int swapIndex = rand()%this->size();
+        Card temp = myCards[i%this->size()];
+        myCards[i%this->size()] = myCards[swapIndex];
         myCards[swapIndex] = temp;
     }
 }
@@ -49,12 +51,12 @@ void Deck::shuffle()
 // Precondition: There are cards left in the deck
 Card Deck::dealCard()
 {
-    myIndex++;
+    myIndex--;
     return myCards[myIndex];
 
 }
 
 int Deck::size() const
 {
-    return SIZE - myIndex;
+    return myIndex;
 }

@@ -20,6 +20,8 @@ void Player::addCard(Card c)
     {
         this->bookCards(*card1, *card2);
     }
+    delete(card1);
+    delete(card2);
 }
 
 void Player::bookCards(Card c1, Card c2)
@@ -42,7 +44,7 @@ bool Player::cardInHand(Card c) const
 {
     for(vector<Card>::const_iterator  i=myHand.begin(); i!=myHand.end(); ++i)
     {
-        if(*i==c)
+        if((*i).getRank()==c.getRank())
         {
             return true;
         }
@@ -52,14 +54,16 @@ bool Player::cardInHand(Card c) const
 
 Card Player::removeCardFromHand(Card c)
 {
+    int index = 0;
     for(vector<Card>::const_iterator i=myHand.begin(); i!=myHand.end(); ++i)
     {
-        if(*i==c)
+        if((*i).getRank()==c.getRank())
         {
             Card temp = *i;
-            myHand.erase(i);
+            myHand.erase(myHand.begin()+index);
             return temp;
         }
+        index++;
     }
     return *(new Card::Card());
 }
@@ -110,9 +114,13 @@ bool Player::checkHandForBook(Card &c1, Card &c2)
 {
     for(vector<Card>::const_iterator i=myHand.begin(); i!=myHand.end(); ++i) {
         for (vector<Card>::const_iterator j = i+1; j != myHand.end(); ++j) {
-            if ((*i) == (*j)) {
-                c1 = *(new Card::Card((*i).getRank(), (*i).getSuit()));
-                c2 = *(new Card::Card((*j).getRank(), (*j).getSuit()));
+            if ((*i).getRank() == (*j).getRank()) {
+                Card* temp = new Card::Card((*i).getRank(), (*i).getSuit());
+                Card* temp2 = new Card::Card((*j).getRank(), (*j).getSuit());
+                c1 = *temp;
+                c2 = *temp2;
+                delete(temp);
+                delete(temp2);
                 return true;
             }
         }
