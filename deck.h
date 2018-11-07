@@ -31,17 +31,18 @@ class Deck
 public:
 
 
-    Deck();           // pristine, sorted deck
+    Deck();            // pristine, sorted deck
 
-    void shuffle();   // shuffle the deck, all 52 cards present
-    Card dealCard();   // get a card, after 52 are dealt, fail
+    void shuffle();    // shuffle the deck, all 52 cards present
+    Card dealCard();   // get a card, after 52 are dealt, fail / Precondition: Their are cards left in the deck so
+                       // size() > 0
 
     int  size() const; // # cards left in the deck
 
 private:
 
     Card myCards[SIZE];
-    int myIndex;  // current card to deal
+    int myIndex;       // current card to deal
 };
 
 #endif

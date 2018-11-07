@@ -52,8 +52,14 @@ void Deck::shuffle()
 Card Deck::dealCard()
 {
     myIndex--;
-    return myCards[myIndex];
-
+    if(myIndex >= 0) {
+        return myCards[myIndex];
+    } else{     // Should technically never come here
+        Card* temp = new Card();
+        Card temp2 = *temp;
+        delete(temp);
+        return temp2;
+    }
 }
 
 int Deck::size() const
